@@ -1,0 +1,16 @@
+
+postgresqlpwd - tworzenie
+
+psql
+
+ssh s409960@labagh.pl
+
+bd AGH.bd3i
+
+username: s409960
+DB HOST: labagh.pl
+DB PORT: 5432
+DB NAME: s409960
+DB USER: s409960
+DB PASSWORD: etz7p2x2kxp0
+ 
