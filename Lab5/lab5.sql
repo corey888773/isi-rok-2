@@ -4,9 +4,9 @@ select count(*) from czekoladki where nadzienie is not null ;
 
 select count(nadzienie) from czekoladki;
 
-select p.idpudelka, p.nazwa, max(z.sztuk) as mx from pudelka p
+select p.idpudelka, p.nazwa, sum(z.sztuk) as sm from pudelka p
     join zawartosc z on p.idpudelka = z.idpudelka
-    group by p.nazwa, p.idpudelka order by mx desc limit 1;
+    group by p.nazwa, p.idpudelka order by sm desc limit 1;
 
 select p.idpudelka, p.nazwa, sum(z.sztuk) as sum from pudelka p
     join zawartosc z on p.idpudelka = z.idpudelka
@@ -119,13 +119,12 @@ select p.idpudelka, sum(a.sztuk) * p.cena - sum(c.koszt*z.sztuk)  from czekoladk
     join pudelka p on z.idpudelka = p.idpudelka
     join artykuly a on p.idpudelka = a.idpudelka
     group by p.idpudelka;
-
 with ceny as
-(select sum(a.sztuk) * p.cena - sum(c.koszt*z.sztuk) as zyski from czekoladki c
-    join zawartosc z on c.idczekoladki = z.idczekoladki
-    join pudelka p on z.idpudelka = p.idpudelka
-    join artykuly a on p.idpudelka = a.idpudelka
-    group by p.idpudelka)
+    (select sum(a.sztuk) * p.cena - sum(c.koszt*z.sztuk) as zyski from czekoladki c
+        join zawartosc z on c.idczekoladki = z.idczekoladki
+        join pudelka p on z.idpudelka = p.idpudelka
+        join artykuly a on p.idpudelka = a.idpudelka
+        group by p.idpudelka)
 select sum(ceny.zyski) from ceny;
 
 -- 8
