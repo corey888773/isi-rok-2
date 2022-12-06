@@ -133,5 +133,6 @@ Create sequence indexNumber start 1;
 select nextval('indexNumber') as index, p.idpudelka from pudelka p order by p.idpudelka;
 drop sequence indexNumber;
 
+select '15-10-2022' - '12-10-2022';
 
 
