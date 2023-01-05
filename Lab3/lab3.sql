@@ -23,13 +23,25 @@ select idczekoladki, nazwa, czekolada, orzechy, nadzienie from czekoladki
 where nazwa like 'S%i';
 
 select idczekoladki, nazwa, czekolada, orzechy, nadzienie from czekoladki
+where nazwa ~ '^S.*i$';
+
+select idczekoladki, nazwa, czekolada, orzechy, nadzienie from czekoladki
 where nazwa like 'S% m%';
 
 select idczekoladki, nazwa, czekolada, orzechy, nadzienie from czekoladki
 where nazwa like 'C%' or nazwa like 'A%' or nazwa like 'B%';
 
 select idczekoladki, nazwa, czekolada, orzechy, nadzienie from czekoladki
+where nazwa ~ '^[A-C].*';
+
+select idczekoladki, nazwa, czekolada, orzechy, nadzienie from czekoladki
 where nazwa like '%rzech%';
+
+select idczekoladki, nazwa, czekolada, orzechy, nadzienie from czekoladki
+where nazwa ~ '.*[O,o]rzech.*';
+
+select idczekoladki, nazwa, czekolada, orzechy, nadzienie from czekoladki
+where nazwa ~ '.*(O|o)rzech.*';
 
 select idczekoladki, nazwa, czekolada, orzechy, nadzienie from czekoladki
 where nazwa similar to '(A|B|C)%';
@@ -39,6 +51,8 @@ where nazwa ~ '^(A|B|C)';
 
 -- 3
 select miejscowosc from klienci where miejscowosc like '% %' or miejscowosc like '%-%';
+select miejscowosc from klienci;
+
 
 select * from klienci where length(telefon) > 11;
 
@@ -73,20 +87,20 @@ except
 -- 6
 set search_path to siatkowka;
 
-select * from mecze;
-select * from statystyki;
+select * from siatkowka.mecze;
+select * from siatkowka.statystyki;
 
 select idmeczu,
        gospodarze[1]+gospodarze[2]+gospodarze[3]+coalesce(gospodarze[4], 0)+coalesce(gospodarze[5], 0),
        goscie[1]+goscie[2]+goscie[3]+coalesce(goscie[4], 0)+coalesce(goscie[5], 0)
-from statystyki group by idmeczu order by idmeczu;
+from siatkowka.statystyki group by idmeczu order by idmeczu;
 
-select idmeczu, (SELECT SUM(s) FROM UNNEST(gospodarze) s), (SELECT SUM(s) FROM UNNEST(goscie) s) from statystyki;
+select idmeczu, (SELECT SUM(s) FROM UNNEST(gospodarze) s), (SELECT SUM(s) FROM UNNEST(goscie) s) from siatkowka.statystyki;
 
 select idmeczu,
        gospodarze[1]+gospodarze[2]+gospodarze[3]+coalesce(gospodarze[4], 0)+coalesce(gospodarze[5], 0),
        goscie[1]+goscie[2]+goscie[3]+coalesce(goscie[4], 0)+coalesce(goscie[5], 0)
-from statystyki where array_length(gospodarze , 1) = 5 and (gospodarze[5] > 15 or goscie[5] > 15) group by idmeczu;
+from siatkowka.statystyki where array_length(gospodarze , 1) = 5 and (gospodarze[5] > 15 or goscie[5] > 15) group by idmeczu;
 
 select idmeczu, concat(
     case when gospodarze[1] > goscie[1] then 1 else 0 end
@@ -100,7 +114,7 @@ select idmeczu, concat(
     +case when gospodarze[3] < goscie[3] then 1 else 0 end
     +case when gospodarze[4] < goscie[4] then 1 else 0 end
     +case when gospodarze[5] < goscie[5] then 1 else 0 end
-    ) from statystyki;
+    ) from siatkowka.statystyki;
 
 -- 7
 set search_path to siatkowka;

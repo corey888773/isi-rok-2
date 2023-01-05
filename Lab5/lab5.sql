@@ -61,11 +61,11 @@ select c.idczekoladki, count(p.idpudelka) as suma from pudelka p
     group by c.idczekoladki
     order by suma desc limit 1;
 
-select p.idpudelka, sum(z.sztuk) from pudelka p
+with tab as (select p.idpudelka, sum(z.sztuk) as ilosc from pudelka p
     join zawartosc z on p.idpudelka = z.idpudelka
     join czekoladki c on z.idczekoladki = c.idczekoladki
-    where c.orzechy is null group by p.idpudelka
-    order by 2 desc limit 1;
+    where c.orzechy is null group by p.idpudelka)
+select idpudelka, ilosc from tab where ilosc = (select max(ilosc) from tab);
 
 select c.idczekoladki, count(p.idpudelka) as suma from pudelka p
     join zawartosc z on p.idpudelka = z.idpudelka
@@ -79,13 +79,13 @@ select p.idpudelka, sum(a.sztuk) as suma from artykuly a
     group by p.idpudelka order by suma desc limit 1;
 
 -- 5
-select count(*) ,extract(quarter from datarealizacji) as quarter from zamowienia
+select count(*), extract(quarter from datarealizacji) as quarter from zamowienia
     group by quarter;
 
-select count(*) ,extract(month from datarealizacji) as month from zamowienia
+select count(*), extract(month from datarealizacji) as month from zamowienia
     group by month order by month;
 
-select count(*) ,extract(week from datarealizacji) as week from zamowienia
+select count(*), extract(week from datarealizacji) as week from zamowienia
     group by week order by week;
 
 select count(*), k.miejscowosc from zamowienia z
@@ -119,6 +119,7 @@ select p.idpudelka, sum(a.sztuk) * p.cena - sum(c.koszt*z.sztuk)  from czekoladk
     join pudelka p on z.idpudelka = p.idpudelka
     join artykuly a on p.idpudelka = a.idpudelka
     group by p.idpudelka;
+
 with ceny as
     (select sum(a.sztuk) * p.cena - sum(c.koszt*z.sztuk) as zyski from czekoladki c
         join zawartosc z on c.idczekoladki = z.idczekoladki
