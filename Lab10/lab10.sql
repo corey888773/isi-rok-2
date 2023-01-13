@@ -51,5 +51,6 @@ select nazwa, opis, cena from pudelka where idpudelka not in (select p.idpudelka
 select nazwa, opis, cena from pudelka where idpudelka in (select p.idpudelka from pudelka p join zawartosc z on p.idpudelka = z.idpudelka join czekoladki c on z.idczekoladki = c.idczekoladki where c.nadzienie is null);
 
 -- 5
+select * from czekoladki
 
 
