@@ -33,7 +33,7 @@ class ReaderTest {
         Library library = mock(Library.class);
         Reader reader = new Reader(library, 1);
 
-        assertEquals(1, reader.getOwnId());
+        assertEquals(1, reader.getCode());
         assertEquals(library, reader.getLibrary());
     }
 
@@ -43,11 +43,11 @@ class ReaderTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testGetOwnId() {
+    void testgetCode() {
         Library library = mock(Library.class);
         Reader reader = new Reader(library, 1);
 
-        assertEquals(1, reader.getOwnId());
+        assertEquals(1, reader.getCode());
     }
 
     @org.junit.jupiter.api.Test

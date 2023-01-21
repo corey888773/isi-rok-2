@@ -1,9 +1,7 @@
 package pl.edu.agh.kis.pz1;
-
 import pl.edu.agh.kis.pz1.util.Reader;
 import pl.edu.agh.kis.pz1.util.Writer;
 import pl.edu.agh.kis.pz1.util.Library;
-
 import java.util.ArrayList;
 import java.util.List;
 

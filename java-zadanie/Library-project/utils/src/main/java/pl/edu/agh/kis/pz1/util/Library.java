@@ -6,15 +6,66 @@ import java.util.concurrent.Semaphore;
  * Library class - a class that simulates a library with readers and writers
  */
 public class Library {
+
+    //region Fields and gettters/setters
     private static final int MAX_READERS = 5;
     private final Semaphore libraryRoom;
     private final Semaphore queue;
-
     private int libraryReadersCounter = 0;
     private int libraryWritersCounter = 0;
     private int queueReadersCounter = 0;
     private int queueWritersCounter = 0;
 
+    /**
+     * getLibraryRoom() - a method that returns a semaphore that represents the library room
+     * @return a semaphore that represents the library room
+     */
+    public Semaphore getLibraryRoom() {
+        return libraryRoom;
+    }
+
+    /**
+     * getQueue() - a method that returns a semaphore that represents the queue
+     * @return a semaphore that represents the queue
+     */
+    public Semaphore getQueue() {
+        return queue;
+    }
+
+    /**
+     * getLibraryReadersCounter() - a method that returns the number of readers in the library
+     * @return the number of readers in the library
+     */
+    public int getLibraryReadersCounter() {
+        return libraryReadersCounter;
+    }
+
+    /**
+     * getLibraryWritersCounter() - a method that returns the number of writers in the library
+     * @return the number of writers in the library
+     */
+    public int getLibraryWritersCounter() {
+        return libraryWritersCounter;
+    }
+
+    /**
+     * getQueueReadersCounter() - a method that returns the number of readers in the queue
+     * @return the number of readers in the queue
+     */
+    public int getQueueReadersCounter() {
+        return queueReadersCounter;
+    }
+
+    /**
+     * getQueueWritersCounter() - a method that returns the number of writers in the queue
+     * @return the number of writers in the queue
+     */
+    public int getQueueWritersCounter() {
+        return queueWritersCounter;
+    }
+    //endregion
+
+    //region Methods and constructors
     /**
         * Creates a library.
      */
@@ -25,36 +76,34 @@ public class Library {
 
     /**
      * Adds reader to the library.
-     * @param id id of the reader
+     * @param code of the reader
      * @throws InterruptedException
      */
-    public void addReader(int id) throws InterruptedException {
+    public void addReader(int code) throws InterruptedException {
 
         synchronized (this) {
             queueReadersCounter++;
         }
-
         queue.acquire();
-        System.out.printf("Reader %s is waiting in a queue %n", id);
+        System.out.printf("Reader %s is waiting in a queue %n", code);
         libraryRoom.acquire();
-        System.out.printf("Reader %s enters the library %n", id);
+        System.out.printf("Reader %s enters the library %n", code);
 
         synchronized (this) {
             queueReadersCounter--;
             libraryReadersCounter++;
 
-            System.out.println(getData());
+            System.out.print(getSummary());
         }
-
         queue.release();
     }
 
     /**
      * Releases a permit, returning it to the semaphore.
-     * @param id id of the reader
+     * @param code of the reader
      */
-    public void releaseReader(int id) {
-        System.out.printf("Reader %s leaves the library %n", id);
+    public void releaseReader(int code) {
+        System.out.printf("Reader %s leaves the library %n", code);
         libraryRoom.release();
 
         synchronized (this) {
@@ -64,36 +113,34 @@ public class Library {
 
     /**
      * Writers are not allowed to enter the library if there are any readers inside.
-     * @param id Writer's id.
+     * @param code Writer's code.
      * @throws InterruptedException
      */
-    public void addWriter(int id) throws InterruptedException {
+    public void addWriter(int code) throws InterruptedException {
 
         synchronized (this) {
             queueWritersCounter++;
         }
-
         queue.acquire();
-        System.out.printf("Writer %s is waiting in a queue %n", id);
+        System.out.printf("Writer %s is waiting in a queue %n", code);
         libraryRoom.acquire(5);
-        System.out.printf("Writer %s enters the library %n", id);
+        System.out.printf("Writer %s enters the library %n", code);
 
         synchronized (this) {
             queueWritersCounter--;
             libraryWritersCounter++;
 
-            System.out.println(getData());
+            System.out.print(getSummary());
         }
-
         queue.release();
     }
 
     /**
      * Method to release a writer.
-     * @param id id of the writer
+     * @param code of the writer
      */
-    public void releaseWriter(int id) {
-        System.out.printf("Writer %s leaves the library %n", id);
+    public void releaseWriter(int code) {
+        System.out.printf("Writer %s leaves the library %n", code);
         libraryRoom.release(5);
 
         synchronized (this) {
@@ -102,64 +149,16 @@ public class Library {
     }
 
     /**
-     * Method to get data about readers and writers in the library.
-     * @return data about readers and writers in the library
+     * Method to print data about readers and writers in the library.
      */
-    public String getData() {
-        return String.format
-                ("\n------------------------------" +
-                "\nReaders in library: %s" +
-                "\nWriters in library: %s" +
-                "\nReaders in queue: %s" +
-                "\nWriters in queue: %s" +
-                "\n------------------------------\n",
-                libraryReadersCounter, libraryWritersCounter, queueReadersCounter, queueWritersCounter);
+    public String getSummary() {
+        return String.format("\n------------------------------" +
+                        "\nReaders in library: %s" +
+                        "\nWriters in library: %s" +
+                        "\nReaders in queue: %s" +
+                        "\nWriters in queue: %s" +
+                        "\n------------------------------\n",
+                        libraryReadersCounter, libraryWritersCounter, queueReadersCounter, queueWritersCounter);
     }
-
-    /** Returns the number of available permits.
-     * @return the available
-     */
-    public Semaphore getSemaphoreLibrary() {
-        return libraryRoom;
-    }
-
-    /**
-     * Returns the number of available permits.
-     * @return the available permits
-     */
-    public Semaphore getSemaphoreQueue() {
-        return queue;
-    }
-
-    /**
-     * Returns the number of readers in the library.
-     * @return the number of readers in the library
-     */
-    public int getLibraryReadersCounter() {
-        return libraryReadersCounter;
-    }
-
-    /**
-     * Returns the number of writers in the library.
-     * @return the number of writers in the library
-     */
-    public int getLibraryWritersCounter() {
-        return libraryWritersCounter;
-    }
-
-    /**
-     * Returns the number of readers in the queue.
-     * @return the number of readers in the queue
-     */
-    public int getQueueReadersCounter() {
-        return queueReadersCounter;
-    }
-
-    /**
-     * Returns the number of writers in the queue.
-     * @return the number of writers in the queue
-     */
-    public int getQueueWritersCounter() {
-        return queueWritersCounter;
-    }
+    //endregion
 }

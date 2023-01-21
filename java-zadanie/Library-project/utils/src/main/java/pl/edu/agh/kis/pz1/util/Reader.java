@@ -4,22 +4,42 @@ package pl.edu.agh.kis.pz1.util;
  * Reader class - a class that simulates a reader
  */
 public class Reader extends Thread {
+
+    //region Fields and gettters/setters
     private final Library library;
-    private final int id;
+    private final int code;
 
     /**
-     * Creates a reader with a given id.
+     * Returns code of the reader.
+     * @return code of the reader
+     */
+    public int getCode() {
+        return code;
+    }
+
+    /**
+     * Returns library.
+     * @return library
+     */
+    public Library getLibrary() {
+        return library;
+    }
+    //endregion
+
+    //region Methods and constructors
+    /**
+     * Creates a reader with a given code.
      *
      * @param library library
-     * @param id      id of the reader
+     * @param code of the reader
      */
-    public Reader(Library library, int id) {
+    public Reader(Library library, int code) {
         if (library == null) {
             throw new IllegalArgumentException("Library cannot be null");
         }
 
         this.library = library;
-        this.id = id;
+        this.code = code;
     }
 
     /**
@@ -30,8 +50,8 @@ public class Reader extends Thread {
         int counter = 0;
         while (true) {
             try {
-                library.addReader(id);
-                System.out.printf("Reader %s reads in a library %n", id);
+                library.addReader(code);
+                System.out.printf("Reader %s reads in a library %n", code);
 
                 Thread.sleep(2000);
 
@@ -40,7 +60,7 @@ public class Reader extends Thread {
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
-                library.releaseReader(id);
+                library.releaseReader(code);
             }
 
             counter++;
@@ -49,20 +69,5 @@ public class Reader extends Thread {
             }
         }
     }
-
-    /**
-     * Returns id of the reader.
-     * @return id of the reader
-     */
-    public int getOwnId() {
-        return id;
-    }
-
-    /**
-     * Returns library.
-     * @return library
-     */
-    public Library getLibrary() {
-        return library;
-    }
+    //endregion
 }

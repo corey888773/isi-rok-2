@@ -7,7 +7,7 @@ import static org.mockito.Mockito.*;
 
 class WriterTest {
 
-    @org.junit.jupiter.api.Test
+    @org.testng.annotations.Test
     void testWriterRunMethod() throws InterruptedException {
         Library library = mock(Library.class);
         Writer writer = new Writer(library, 1);
@@ -33,7 +33,7 @@ class WriterTest {
         Library library = mock(Library.class);
         Writer writer = new Writer(library, 1);
 
-        assertEquals(1, writer.getOwnId());
+        assertEquals(1, writer.getCode());
         assertEquals(library, writer.getLibrary());
     }
 
@@ -43,11 +43,11 @@ class WriterTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testGetOwnId() {
+    void testgetCode() {
         Library library = mock(Library.class);
         Writer writer = new Writer(library, 1);
 
-        assertEquals(1, writer.getOwnId());
+        assertEquals(1, writer.getCode());
     }
 
     @org.junit.jupiter.api.Test

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Library-project/Library-project.iml" filepath="$PROJECT_DIR$/Library-project/Library-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/java-zadanie.iml" filepath="$PROJECT_DIR$/.idea/java-zadanie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Library-project/main/main.iml" filepath="$PROJECT_DIR$/Library-project/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Library-project/utils/utils.iml" filepath="$PROJECT_DIR$/Library-project/utils/utils.iml" />
+    </modules>
+  </component>
+</project>

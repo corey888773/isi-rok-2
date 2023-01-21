@@ -1,7 +1,6 @@
 package pl.edu.agh.kis.pz1.util;
 
 import java.util.concurrent.Semaphore;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -15,14 +14,14 @@ class LibraryTest {
     @org.junit.jupiter.api.Test
     void testLibrarySemaphoreCreation() {
         Library library = new Library();
-        Semaphore semaphore = library.getSemaphoreLibrary();
+        Semaphore semaphore = library.getLibraryRoom();
         assertEquals(5, semaphore.availablePermits());
     }
 
     @org.junit.jupiter.api.Test
     void testQueueSemaphoreCreation() {
         Library library = new Library();
-        Semaphore semaphore = library.getSemaphoreQueue();
+        Semaphore semaphore = library.getQueue();
         assertEquals(1, semaphore.availablePermits());
     }
 
@@ -30,12 +29,12 @@ class LibraryTest {
     @org.junit.jupiter.api.Test
     void testAddReader() throws InterruptedException {
         library.addReader(1);
-        assertEquals(4, library.getSemaphoreLibrary().availablePermits());
-        assertEquals(1, library.getSemaphoreQueue().availablePermits());
+        assertEquals(4, library.getLibraryRoom().availablePermits());
+        assertEquals(1, library.getQueue().availablePermits());
 
         library.addReader(2);
-        assertEquals(3, library.getSemaphoreLibrary().availablePermits());
-        assertEquals(1, library.getSemaphoreQueue().availablePermits());
+        assertEquals(3, library.getLibraryRoom().availablePermits());
+        assertEquals(1, library.getQueue().availablePermits());
     }
 
     @org.junit.jupiter.api.Test
@@ -84,18 +83,18 @@ class LibraryTest {
         library.addReader(2);
         library.addReader(3);
         library.releaseReader(1);
-        assertEquals(3, library.getSemaphoreLibrary().availablePermits());
-        assertEquals(1, library.getSemaphoreQueue().availablePermits());
+        assertEquals(3, library.getLibraryRoom().availablePermits());
+        assertEquals(1, library.getQueue().availablePermits());
         library.releaseReader(2);
-        assertEquals(4, library.getSemaphoreLibrary().availablePermits());
-        assertEquals(1, library.getSemaphoreQueue().availablePermits());
+        assertEquals(4, library.getLibraryRoom().availablePermits());
+        assertEquals(1, library.getQueue().availablePermits());
     }
 
     @org.junit.jupiter.api.Test
     void testAddWriter() throws InterruptedException {
         library.addWriter(1);
-        assertEquals(0, library.getSemaphoreLibrary().availablePermits());
-        assertEquals(1, library.getSemaphoreQueue().availablePermits());
+        assertEquals(0, library.getLibraryRoom().availablePermits());
+        assertEquals(1, library.getQueue().availablePermits());
     }
 
     @org.junit.jupiter.api.Test
@@ -143,12 +142,12 @@ class LibraryTest {
     @org.junit.jupiter.api.Test
     void testReleaseWriter() throws InterruptedException {
         library.addWriter(1);
-        assertEquals(0, library.getSemaphoreLibrary().availablePermits());
-        assertEquals(1, library.getSemaphoreQueue().availablePermits());
+        assertEquals(0, library.getLibraryRoom().availablePermits());
+        assertEquals(1, library.getQueue().availablePermits());
 
         library.releaseWriter(1);
-        assertEquals(5, library.getSemaphoreLibrary().availablePermits());
-        assertEquals(1, library.getSemaphoreQueue().availablePermits());
+        assertEquals(5, library.getLibraryRoom().availablePermits());
+        assertEquals(1, library.getQueue().availablePermits());
     }
 
     @org.junit.jupiter.api.Test
@@ -203,8 +202,8 @@ class LibraryTest {
 
     @org.junit.jupiter.api.Test
     void testGetSemaphores() {
-        assertEquals(MAX_READERS, library.getSemaphoreLibrary().availablePermits());
-        assertEquals(1, library.getSemaphoreQueue().availablePermits());
+        assertEquals(MAX_READERS, library.getLibraryRoom().availablePermits());
+        assertEquals(1, library.getQueue().availablePermits());
     }
 
     @org.junit.jupiter.api.Test
@@ -213,7 +212,7 @@ class LibraryTest {
             library.addReader(i);
         }
 
-        String data = library.getData();
+        String data = library.getSummary();
         assertTrue(data.contains("Readers in library: " + NUM_READERS));
         assertTrue(data.contains("Writers in library: 0"));
         assertTrue(data.contains("Readers in queue: 0"));
@@ -223,7 +222,7 @@ class LibraryTest {
             library.releaseReader(i);
         }
 
-        data = library.getData();
+        data = library.getSummary();
         assertTrue(data.contains("Readers in library: 0"));
         assertTrue(data.contains("Writers in library: 0"));
         assertTrue(data.contains("Readers in queue: 0"));
@@ -231,13 +230,12 @@ class LibraryTest {
 
         library.addWriter(1);
 
-        data = library.getData();
+        data = library.getSummary();
         assertTrue(data.contains("Readers in library: 0"));
         assertTrue(data.contains("Writers in library: 1"));
         assertTrue(data.contains("Readers in queue: 0"));
         assertTrue(data.contains("Writers in queue: 0"));
     }
-
     @org.junit.jupiter.api.Test
     void testgetLibraryReadersCounter() throws InterruptedException {
         for (int i = 0; i < NUM_READERS; i++) {
