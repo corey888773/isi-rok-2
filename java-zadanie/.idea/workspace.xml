@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8cd0390d-8eb0-4817-a7b0-be652778b6bd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Library-project/main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/main/src/main/java/pl/edu/agh/kis/pz1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/main/src/main/java/pl/edu/agh/kis/pz1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/main/target/classes/pl/edu/agh/kis/pz1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/main/target/classes/pl/edu/agh/kis/pz1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/main/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/main/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/main/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/main/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/src/main/java/pl/edu/agh/kis/pz1/util/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/src/main/java/pl/edu/agh/kis/pz1/util/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/src/main/java/pl/edu/agh/kis/pz1/util/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/src/main/java/pl/edu/agh/kis/pz1/util/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/src/main/java/pl/edu/agh/kis/pz1/util/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/src/main/java/pl/edu/agh/kis/pz1/util/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/src/test/java/pl/edu/agh/kis/pz1/util/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/src/test/java/pl/edu/agh/kis/pz1/util/LibraryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/src/test/java/pl/edu/agh/kis/pz1/util/ReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/src/test/java/pl/edu/agh/kis/pz1/util/ReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/src/test/java/pl/edu/agh/kis/pz1/util/WriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/src/test/java/pl/edu/agh/kis/pz1/util/WriterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/target/classes/pl/edu/agh/kis/pz1/util/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/target/classes/pl/edu/agh/kis/pz1/util/Library.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/target/classes/pl/edu/agh/kis/pz1/util/Reader.class" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/target/classes/pl/edu/agh/kis/pz1/util/Reader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/target/classes/pl/edu/agh/kis/pz1/util/Writer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/target/classes/pl/edu/agh/kis/pz1/util/Writer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library-project/utils/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Library-project/utils/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2KHb71qOEbOJw8dn5jUgZr8i0RE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Piotr/ISI_Rok_2/java-zadanie&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Piotr\ISI_Rok_2\java-zadanie" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cd0390d-8eb0-4817-a7b0-be652778b6bd" name="Changes" comment="" />
+      <created>1673634286494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673634286494</updated>
+      <workItem from="1673634287859" duration="47000" />
+      <workItem from="1673634351718" duration="8035000" />
+      <workItem from="1673901432284" duration="105000" />
+      <workItem from="1673901819993" duration="1462000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

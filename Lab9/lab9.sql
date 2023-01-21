@@ -1,86 +1,72 @@
--- create schema kwiaciarnia;
+DROP SCHEMA kwiaciarnia CASCADE;
+CREATE SCHEMA kwiaciarnia;
 
-create table kwiaciarnia.klienci(
-    idklienta varchar(10) NOT NULL,
-    haslo varchar(10) NOT NULL,
-    nazwa varchar(40) NOT NULL,
-    miasto varchar(40) NOT NULL,
-    kod char(6) NOT NULL,
-    adres varchar(40) NOT NULL,
-    email varchar(40),
-    telefon varchar(16) NOT NULL,
-    fax varchar(16),
-    nip char(13),
-    regon char(9),
-    CONSTRAINT haslo_min CHECK (length((haslo)::text) >= 4)
+CREATE TABLE kwiaciarnia.klienci(
+    idklienta VARCHAR(10),
+    haslo VARCHAR(10) CHECK(LENGTH(haslo) >= 4) NOT NULL,
+    nazwa VARCHAR(40) NOT NULL,
+    miasto VARCHAR(40) NOT NULL,
+    kod CHAR(6) NOT NULL,
+    adres VARCHAR(40) NOT NULL,
+    email VARCHAR(40),
+    telefon VARCHAR(16) NOT NULL,
+    fax VARCHAR(16),
+    nip CHAR(13),
+    region CHAR(9),
+    PRIMARY KEY (idklienta)
 );
 
-create table kwiaciarnia.kompozycje(
-    idkompozycji char(5) NOT NULL,
-    nazwa varchar(40) NOT NULL,
-    opis varchar(100),
-    cena numeric(10,2),
-    minimum int,
-    stan int,
-    CONSTRAINT min_cena CHECK( cena >= 40.00)
+CREATE TABLE kwiaciarnia.kompozycje(
+    idkompozycji CHAR(5),
+    nazwa VARCHAR(40) NOT NULL,
+    opis VARCHAR(100),
+    cena NUMERIC(10, 2) CHECK(cena >= 40),
+    minimum INT,
+    stan INT,
+    PRIMARY KEY (idkompozycji)
 );
 
-create table kwiaciarnia.odbiorcy(
-    idodbiorcy serial NOT NULL,
-    nazwa varchar(40) NOT NULL,
-    miasto varchar(40) NOT NULL,
-    kod char(6) NOT NULL,
-    adres varchar(40) NOT NULL
+CREATE TABLE kwiaciarnia.odbiorcy(
+  idodbiorcy SERIAL,
+  nazwa VARCHAR(40) NOT NULL,
+  miasto VARCHAR(40) NOT NULL,
+  kod CHAR(6) NOT NULL,
+  adres VARCHAR(40) NOT NULL,
+  PRIMARY KEY (idodbiorcy)
 );
 
-create table kwiaciarnia.zamowienia(
-    idzamowienia int NOT NULL,
-    idklienta varchar(10) NOT NULL,
-    idodbiorcy int NOT NULL,
-    idkompozycji char(5) NOT NULL,
-    termin date NOT NULL,
-    cena numeric(10,2) NOT NULL,
-    zaplacone boolean,
-    uwagi varchar(200)
+CREATE TABLE kwiaciarnia.zamowienia(
+  idzamowienia INT,
+  idklienta VARCHAR(10) NOT NULL,
+  idodbiorcy INT NOT NULL,
+  idkompozycji CHAR(5) NOT NULL,
+  termin DATE NOT NULL,
+  cena NUMERIC(10,2),
+  zaplacone BOOLEAN,
+  uwagi VARCHAR(200),
+  PRIMARY KEY (idzamowienia)
 );
 
-create table kwiaciarnia.historia(
-    idzamowienia int NOT NULL,
-    idklienta varchar(10),
-    idkompozycji char(5),
-    cena numeric(10,2),
-    termin date
+CREATE TABLE kwiaciarnia.historia(
+    idzamowienia INT,
+    idklienta VARCHAR(10),
+    idkompozycji CHAR(5),
+    cena NUMERIC(10,2),
+    termin DATE,
+    PRIMARY KEY (idzamowienia)
 );
 
-create table kwiaciarnia.zapotrzebowanie(
-    idkompozycji char(5),
-    data date
+CREATE TABLE kwiaciarnia.zapotrzebowanie(
+  idkompozycji CHAR(5),
+  data DATE,
+  PRIMARY KEY (idkompozycji)
 );
 
-ALTER TABLE ONLY kwiaciarnia.klienci
-    ADD CONSTRAINT klienci_pkey PRIMARY KEY (idklienta);
+ALTER TABLE ONLY kwiaciarnia.zamowienia ADD CONSTRAINT fkey_klenci FOREIGN KEY (idklienta) REFERENCES kwiaciarnia.klienci;
+ALTER TABLE ONLY kwiaciarnia.zamowienia ADD CONSTRAINT fkey_odbiorcy FOREIGN KEY (idodbiorcy) REFERENCES kwiaciarnia.odbiorcy;
+ALTER TABLE ONLY kwiaciarnia.zamowienia ADD CONSTRAINT fkey_kompozycje FOREIGN KEY (idkompozycji) REFERENCES kwiaciarnia.kompozycje;
 
-ALTER TABLE ONLY kwiaciarnia.kompozycje
-    ADD CONSTRAINT kompozycje_pkey PRIMARY KEY (idkompozycji);
-
-ALTER TABLE ONLY kwiaciarnia.odbiorcy
-    ADD CONSTRAINT odbiorcy_pkey PRIMARY KEY (idodbiorcy);
-
-ALTER TABLE ONLY kwiaciarnia.zamowienia
-    ADD CONSTRAINT zamowienia_pkey PRIMARY KEY (idzamowienia);
-
-ALTER TABLE ONLY kwiaciarnia.zapotrzebowanie
-    ADD CONSTRAINT zapotrzebowanie_pkey PRIMARY KEY (idkompozycji);
-
-ALTER TABLE ONLY kwiaciarnia.zamowienia
-    ADD CONSTRAINT zamowienia_fkey_klienci FOREIGN KEY (idklienta) REFERENCES kwiaciarnia.klienci(idklienta);
-ALTER TABLE ONLY kwiaciarnia.zamowienia
-    ADD CONSTRAINT zamowienia_fkey_odbiorcy FOREIGN KEY (idkompozycji) REFERENCES kwiaciarnia.kompozycje;
-ALTER TABLE ONLY kwiaciarnia.zamowienia
-    ADD CONSTRAINT zamowienia_fkey_kompozycje FOREIGN KEY (idodbiorcy) REFERENCES kwiaciarnia.odbiorcy(idodbiorcy);
-
-ALTER TABLE ONLY kwiaciarnia.zapotrzebowanie
-    ADD CONSTRAINT zapotrzebowanie_fkey_kompozycje FOREIGN KEY (idkompozycji) REFERENCES kwiaciarnia.kompozycje(idkompozycji);
+ALTER TABLE ONLY kwiaciarnia.zapotrzebowanie ADD CONSTRAINT fkey_kompozycje FOREIGN KEY (idkompozycji) REFERENCES kwiaciarnia.kompozycje;
 
 select * from kwiaciarnia.kompozycje;
 update kwiaciarnia.klienci set idklienta = 'msowins' where nazwa = 'Magdalena Sowinska';
