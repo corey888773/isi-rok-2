@@ -1,15 +1,14 @@
 package pl.edu.agh.kis.pz1;
 
-import static junit.framework.TestCase.assertNotNull;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Assertions;
+
 
 
 class MainTest {
 
     @org.junit.jupiter.api.Test
-    void shouldCreateMainObject(){
-        Main main = new Main();
-        assertNotNull("Main method called.", main);
+    void testShouldInvokeMainConstructor(){
+        Assertions.assertNotNull(new Main());
     }
 }
 

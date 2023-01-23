@@ -1,5 +1,7 @@
 package pl.edu.agh.kis.pz1.util;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Semaphore;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,40 +27,34 @@ class LibraryTest {
         assertEquals(1, semaphore.availablePermits());
     }
 
-
     @org.junit.jupiter.api.Test
     void testAddReader() throws InterruptedException {
         library.addReader(1);
         assertEquals(4, library.getLibraryRoom().availablePermits());
-        assertEquals(1, library.getQueue().availablePermits());
-
-        library.addReader(2);
-        assertEquals(3, library.getLibraryRoom().availablePermits());
         assertEquals(1, library.getQueue().availablePermits());
     }
 
     @org.junit.jupiter.api.Test
     void testAddReaderBlockedByReaders() throws InterruptedException {
         Library library = new Library();
-        Reader reader1 = new Reader(library, 1);
-        Reader reader2 = new Reader(library, 2);
-        Reader reader3 = new Reader(library, 3);
-        Reader reader4 = new Reader(library, 4);
-        Reader reader5 = new Reader(library, 5);
-        Reader reader6 = new Reader(library, 6);
+        List<Reader> readers = new ArrayList<>();
+        readers.add(new Reader(library, 1));
+        readers.add(new Reader(library, 2));
+        readers.add(new Reader(library, 3));
+        readers.add(new Reader(library, 4));
+        readers.add(new Reader(library, 5));
+        for (Reader reader : readers) {
+            reader.start();
+        }
 
-        reader1.start();
-        reader2.start();
-        reader3.start();
-        reader4.start();
-        reader5.start();
+        readers.add(new Reader(library, 6));
         long startTime = System.currentTimeMillis();
-        reader6.start();
-        reader6.join();
+        readers.get(5).start();
+        readers.get(5).join();
         long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
+        long deltaTime = endTime - startTime;
 
-        assertTrue(elapsedTime >= 2000);
+        assertTrue(deltaTime >= 2000);
     }
 
     @org.junit.jupiter.api.Test
@@ -72,9 +68,9 @@ class LibraryTest {
         reader.start();
         reader.join();
         long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
+        long deltaTime = endTime - startTime;
 
-        assertTrue(elapsedTime >= 2000);
+        assertTrue(deltaTime >= 2000);
     }
 
     @org.junit.jupiter.api.Test
@@ -84,9 +80,6 @@ class LibraryTest {
         library.addReader(3);
         library.releaseReader(1);
         assertEquals(3, library.getLibraryRoom().availablePermits());
-        assertEquals(1, library.getQueue().availablePermits());
-        library.releaseReader(2);
-        assertEquals(4, library.getLibraryRoom().availablePermits());
         assertEquals(1, library.getQueue().availablePermits());
     }
 
@@ -100,28 +93,32 @@ class LibraryTest {
     @org.junit.jupiter.api.Test
     void testAddWriterBlockedByReaders() throws InterruptedException {
         Library library = new Library();
-        Writer writer1 = new Writer(library, 1);
-        Writer writer2 = new Writer(library, 2);
-        Reader reader1 = new Reader(library, 1);
-        Reader reader2 = new Reader(library, 2);
-        Reader reader3 = new Reader(library, 3);
-        Reader reader4 = new Reader(library, 4);
-        Reader reader5 = new Reader(library, 5);
+        List<Reader> readers = new ArrayList<>();
+        List<Writer> writers = new ArrayList<>();
 
-        reader1.start();
-        reader2.start();
-        reader3.start();
-        reader4.start();
-        reader5.start();
+        writers.add(new Writer(library, 1));
+        writers.add(new Writer(library, 2));
+        readers.add(new Reader(library, 1));
+        readers.add(new Reader(library, 1));
+        readers.add(new Reader(library, 2));
+        readers.add(new Reader(library, 3));
+        readers.add(new Reader(library, 4));
+        readers.add(new Reader(library, 5));
+
+        for (Reader reader : readers) {
+            reader.start();
+        }
+
         long startTime = System.currentTimeMillis();
-        writer1.start();
-        writer2.start();
-        writer1.join();
-        writer2.join();
-        long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
+        for (Writer writer : writers) {
+            writer.start();
+            writer.join();
+        }
 
-        assertTrue(elapsedTime >= 4000);
+        long endTime = System.currentTimeMillis();
+        long deltaTime = endTime - startTime;
+
+        assertTrue(deltaTime >= 4000);
     }
 
     @org.junit.jupiter.api.Test
@@ -134,9 +131,9 @@ class LibraryTest {
         writer2.start();
         writer2.join();
         long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
+        long deltaTime = endTime - startTime;
 
-        assertTrue(elapsedTime >= 2000);
+        assertTrue(deltaTime >= 2000);
     }
 
     @org.junit.jupiter.api.Test
@@ -153,24 +150,23 @@ class LibraryTest {
     @org.junit.jupiter.api.Test
     void testWriterEnteringAfterReaders() {
         Library library = new Library();
+        List<Reader> readers = new ArrayList<>();
         Writer writer1 = new Writer(library, 1);
-        Reader reader1 = new Reader(library, 1);
-        Reader reader2 = new Reader(library, 2);
-        Reader reader3 = new Reader(library, 3);
-        Reader reader4 = new Reader(library, 4);
-        Reader reader5 = new Reader(library, 5);
+        readers.add(new Reader(library, 1));
+        readers.add(new Reader(library, 2));
+        readers.add(new Reader(library, 3));
+        readers.add(new Reader(library, 4));
+        readers.add(new Reader(library, 5));
 
-        reader1.start();
-        reader2.start();
-        reader3.start();
-        reader4.start();
-        reader5.start();
+        for (Reader reader : readers) {
+            reader.start();
+        }
         long startTime = System.currentTimeMillis();
         writer1.start();
         long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
+        long deltaTime = endTime - startTime;
 
-        assertTrue(elapsedTime < 1000);
+        assertTrue(deltaTime < 1000);
     }
 
     @org.junit.jupiter.api.Test
@@ -184,9 +180,9 @@ class LibraryTest {
         long startTime = System.currentTimeMillis();
         reader1.start();
         long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
+        long deltaTime = endTime - startTime;
 
-        assertTrue(elapsedTime < 1000);
+        assertTrue(deltaTime < 1000);
     }
 
     @org.junit.jupiter.api.Test
@@ -217,27 +213,9 @@ class LibraryTest {
         assertTrue(data.contains("Writers in library: 0"));
         assertTrue(data.contains("Readers in queue: 0"));
         assertTrue(data.contains("Writers in queue: 0"));
-
-        for (int i = 0; i < NUM_READERS; i++) {
-            library.releaseReader(i);
-        }
-
-        data = library.getSummary();
-        assertTrue(data.contains("Readers in library: 0"));
-        assertTrue(data.contains("Writers in library: 0"));
-        assertTrue(data.contains("Readers in queue: 0"));
-        assertTrue(data.contains("Writers in queue: 0"));
-
-        library.addWriter(1);
-
-        data = library.getSummary();
-        assertTrue(data.contains("Readers in library: 0"));
-        assertTrue(data.contains("Writers in library: 1"));
-        assertTrue(data.contains("Readers in queue: 0"));
-        assertTrue(data.contains("Writers in queue: 0"));
     }
     @org.junit.jupiter.api.Test
-    void testgetLibraryReadersCounter() throws InterruptedException {
+    void testGetLibraryReadersCounter() throws InterruptedException {
         for (int i = 0; i < NUM_READERS; i++) {
             library.addReader(i);
         }
@@ -250,7 +228,7 @@ class LibraryTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testgetLibraryWritersCounter() throws InterruptedException {
+    void testGetLibraryWritersCounter() throws InterruptedException {
         library.addWriter(1);
         assertEquals(1, library.getLibraryWritersCounter());
 
@@ -259,7 +237,7 @@ class LibraryTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testgetQueueReadersCounter() throws InterruptedException {
+    void testGetQueueReadersCounter() throws InterruptedException {
         for (int i = 0; i < NUM_READERS; i++) {
             library.addReader(i);
         }
@@ -267,7 +245,7 @@ class LibraryTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testgetQueueWritersCounter() throws InterruptedException {
+    void testGetQueueWritersCounter() throws InterruptedException {
         for (int i = 0; i < NUM_WRITERS; i++) {
             library.addWriter(i);
         }

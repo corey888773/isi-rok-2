@@ -1,5 +1,7 @@
 package pl.edu.agh.kis.pz1.util;
 
+import java.time.Duration;
+
 /**
  * Writer class - a class that simulates a writer
  */
@@ -53,9 +55,9 @@ public class Writer extends Thread {
         while (true) {
             try {
                 library.addWriter(code);
-                System.out.printf("Writer %s writes in a library %n", code);
+                System.out.printf("Writer %s WRITES in a library %n", code);
 
-                Thread.sleep(2000);
+                Thread.sleep(Duration.ofSeconds(1).toMillis());
 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();

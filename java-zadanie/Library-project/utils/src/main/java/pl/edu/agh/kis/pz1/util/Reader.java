@@ -1,5 +1,7 @@
 package pl.edu.agh.kis.pz1.util;
 
+import java.time.Duration;
+
 /**
  * Reader class - a class that simulates a reader
  */
@@ -51,9 +53,9 @@ public class Reader extends Thread {
         while (true) {
             try {
                 library.addReader(code);
-                System.out.printf("Reader %s reads in a library %n", code);
+                System.out.printf("Reader %s READS in a library %n", code);
 
-                Thread.sleep(2000);
+                Thread.sleep(Duration.ofSeconds(1).toMillis());
 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();

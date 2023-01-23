@@ -85,9 +85,9 @@ public class Library {
             queueReadersCounter++;
         }
         queue.acquire();
-        System.out.printf("Reader %s is waiting in a queue %n", code);
+        System.out.printf("Reader %s is WAITING in a queue %n", code);
         libraryRoom.acquire();
-        System.out.printf("Reader %s enters the library %n", code);
+        System.out.printf("Reader %s ENTERS the library %n", code);
 
         synchronized (this) {
             queueReadersCounter--;
@@ -103,7 +103,7 @@ public class Library {
      * @param code of the reader
      */
     public void releaseReader(int code) {
-        System.out.printf("Reader %s leaves the library %n", code);
+        System.out.printf("Reader %s LEAVES the library %n", code);
         libraryRoom.release();
 
         synchronized (this) {
@@ -122,9 +122,9 @@ public class Library {
             queueWritersCounter++;
         }
         queue.acquire();
-        System.out.printf("Writer %s is waiting in a queue %n", code);
+        System.out.printf("Writer %s IS WAITING in a queue %n", code);
         libraryRoom.acquire(5);
-        System.out.printf("Writer %s enters the library %n", code);
+        System.out.printf("Writer %s ENTERS the library %n", code);
 
         synchronized (this) {
             queueWritersCounter--;
@@ -140,7 +140,7 @@ public class Library {
      * @param code of the writer
      */
     public void releaseWriter(int code) {
-        System.out.printf("Writer %s leaves the library %n", code);
+        System.out.printf("Writer %s LEAVES the library %n", code);
         libraryRoom.release(5);
 
         synchronized (this) {
@@ -152,12 +152,12 @@ public class Library {
      * Method to print data about readers and writers in the library.
      */
     public String getSummary() {
-        return String.format("\n------------------------------" +
+        return String.format("________________SUMMARY________________" +
                         "\nReaders in library: %s" +
                         "\nWriters in library: %s" +
                         "\nReaders in queue: %s" +
                         "\nWriters in queue: %s" +
-                        "\n------------------------------\n",
+                        "\n=======================================\n\n\n",
                         libraryReadersCounter, libraryWritersCounter, queueReadersCounter, queueWritersCounter);
     }
     //endregion
