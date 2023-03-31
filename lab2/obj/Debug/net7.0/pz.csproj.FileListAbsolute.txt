@@ -1,0 +1,15 @@
+C:\Users\Piotr\pz\bin\Debug\net7.0\pz.exe
+C:\Users\Piotr\pz\bin\Debug\net7.0\pz.deps.json
+C:\Users\Piotr\pz\bin\Debug\net7.0\pz.runtimeconfig.json
+C:\Users\Piotr\pz\bin\Debug\net7.0\pz.dll
+C:\Users\Piotr\pz\bin\Debug\net7.0\pz.pdb
+C:\Users\Piotr\pz\obj\Debug\net7.0\pz.csproj.AssemblyReference.cache
+C:\Users\Piotr\pz\obj\Debug\net7.0\pz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Piotr\pz\obj\Debug\net7.0\pz.AssemblyInfoInputs.cache
+C:\Users\Piotr\pz\obj\Debug\net7.0\pz.AssemblyInfo.cs
+C:\Users\Piotr\pz\obj\Debug\net7.0\pz.csproj.CoreCompileInputs.cache
+C:\Users\Piotr\pz\obj\Debug\net7.0\pz.dll
+C:\Users\Piotr\pz\obj\Debug\net7.0\refint\pz.dll
+C:\Users\Piotr\pz\obj\Debug\net7.0\pz.pdb
+C:\Users\Piotr\pz\obj\Debug\net7.0\pz.genruntimeconfig.cache
+C:\Users\Piotr\pz\obj\Debug\net7.0\ref\pz.dll
