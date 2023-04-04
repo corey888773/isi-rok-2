@@ -41,7 +41,6 @@ namespace lab5{
                 Console.WriteLine("All threads stopped");
             }
         }
-
     }
 
     class ThreadTest
@@ -52,8 +51,7 @@ namespace lab5{
         public bool HasStarted {get; set;} = false;
 
         public ThreadTest()
-        {
-        }
+        {}
 
         public void Start()
         {
