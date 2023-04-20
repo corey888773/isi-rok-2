@@ -1,0 +1,15 @@
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\lab06_client.csproj.AssemblyReference.cache
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\lab06_client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\lab06_client.AssemblyInfoInputs.cache
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\lab06_client.AssemblyInfo.cs
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\lab06_client.csproj.CoreCompileInputs.cache
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\bin\Debug\net7.0\lab06_client.exe
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\bin\Debug\net7.0\lab06_client.deps.json
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\bin\Debug\net7.0\lab06_client.runtimeconfig.json
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\bin\Debug\net7.0\lab06_client.dll
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\bin\Debug\net7.0\lab06_client.pdb
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\lab06_client.dll
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\refint\lab06_client.dll
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\lab06_client.pdb
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\lab06_client.genruntimeconfig.cache
+C:\Users\Piotr\ISI_Rok_2\lab06\lab06_client\obj\Debug\net7.0\ref\lab06_client.dll

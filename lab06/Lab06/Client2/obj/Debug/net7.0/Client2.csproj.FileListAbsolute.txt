@@ -1,0 +1,30 @@
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\bin\Debug\net7.0\Client2.exe
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\bin\Debug\net7.0\Client2.deps.json
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\bin\Debug\net7.0\Client2.runtimeconfig.json
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\bin\Debug\net7.0\Client2.dll
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\bin\Debug\net7.0\Client2.pdb
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\Client2.csproj.AssemblyReference.cache
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\Client2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\Client2.AssemblyInfoInputs.cache
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\Client2.AssemblyInfo.cs
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\Client2.csproj.CoreCompileInputs.cache
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\Client2.dll
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\refint\Client2.dll
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\Client2.pdb
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\Client2.genruntimeconfig.cache
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\Lab06\Client2\obj\Debug\net7.0\ref\Client2.dll
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\bin\Debug\net7.0\Client2.exe
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\bin\Debug\net7.0\Client2.deps.json
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\bin\Debug\net7.0\Client2.runtimeconfig.json
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\bin\Debug\net7.0\Client2.dll
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\bin\Debug\net7.0\Client2.pdb
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\Client2.csproj.AssemblyReference.cache
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\Client2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\Client2.AssemblyInfoInputs.cache
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\Client2.AssemblyInfo.cs
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\Client2.csproj.CoreCompileInputs.cache
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\Client2.dll
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\refint\Client2.dll
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\Client2.pdb
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\Client2.genruntimeconfig.cache
+C:\Users\Piotr\ISI_Rok_2\lab06\Lab06\Client2\obj\Debug\net7.0\ref\Client2.dll
