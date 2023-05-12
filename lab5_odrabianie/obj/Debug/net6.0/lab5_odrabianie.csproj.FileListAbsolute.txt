@@ -1,0 +1,15 @@
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/bin/Debug/net6.0/lab5_odrabianie
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/bin/Debug/net6.0/lab5_odrabianie.deps.json
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/bin/Debug/net6.0/lab5_odrabianie.runtimeconfig.json
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/bin/Debug/net6.0/lab5_odrabianie.dll
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/bin/Debug/net6.0/ref/lab5_odrabianie.dll
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/bin/Debug/net6.0/lab5_odrabianie.pdb
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/obj/Debug/net6.0/lab5_odrabianie.csproj.AssemblyReference.cache
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/obj/Debug/net6.0/lab5_odrabianie.GeneratedMSBuildEditorConfig.editorconfig
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/obj/Debug/net6.0/lab5_odrabianie.AssemblyInfoInputs.cache
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/obj/Debug/net6.0/lab5_odrabianie.AssemblyInfo.cs
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/obj/Debug/net6.0/lab5_odrabianie.csproj.CoreCompileInputs.cache
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/obj/Debug/net6.0/lab5_odrabianie.dll
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/obj/Debug/net6.0/ref/lab5_odrabianie.dll
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/obj/Debug/net6.0/lab5_odrabianie.pdb
+/home/piotrek/Repos/ISI_Rok_2/lab5_odrabianie/obj/Debug/net6.0/lab5_odrabianie.genruntimeconfig.cache

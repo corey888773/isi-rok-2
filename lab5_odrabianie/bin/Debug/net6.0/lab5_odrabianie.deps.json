@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "lab5_odrabianie/1.0.0": {
+        "runtime": {
+          "lab5_odrabianie.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "lab5_odrabianie/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\lab07-3.csproj.AssemblyReference.cache
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\lab07-3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\lab07-3.AssemblyInfoInputs.cache
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\lab07-3.AssemblyInfo.cs
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\lab07-3.csproj.CoreCompileInputs.cache
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\bin\Debug\net7.0\lab07-3.exe
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\bin\Debug\net7.0\lab07-3.deps.json
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\bin\Debug\net7.0\lab07-3.runtimeconfig.json
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\bin\Debug\net7.0\lab07-3.dll
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\bin\Debug\net7.0\lab07-3.pdb
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\lab07-3.dll
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\refint\lab07-3.dll
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\lab07-3.pdb
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\lab07-3.genruntimeconfig.cache
+C:\Users\szymo\Desktop\Studia\Semestr 4\C#\lab07\lab07-3\obj\Debug\net7.0\ref\lab07-3.dll

@@ -1,0 +1,15 @@
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/bin/Debug/net6.0/lab07
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/bin/Debug/net6.0/lab07.deps.json
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/bin/Debug/net6.0/lab07.runtimeconfig.json
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/bin/Debug/net6.0/lab07.dll
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/bin/Debug/net6.0/ref/lab07.dll
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/bin/Debug/net6.0/lab07.pdb
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/obj/Debug/net6.0/lab07.csproj.AssemblyReference.cache
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/obj/Debug/net6.0/lab07.GeneratedMSBuildEditorConfig.editorconfig
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/obj/Debug/net6.0/lab07.AssemblyInfoInputs.cache
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/obj/Debug/net6.0/lab07.AssemblyInfo.cs
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/obj/Debug/net6.0/lab07.csproj.CoreCompileInputs.cache
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/obj/Debug/net6.0/lab07.dll
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/obj/Debug/net6.0/ref/lab07.dll
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/obj/Debug/net6.0/lab07.pdb
+/home/piotrek/Repos/ISI_Rok_2/lab7/lab07/lab07/obj/Debug/net6.0/lab07.genruntimeconfig.cache
