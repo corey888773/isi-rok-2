@@ -1,0 +1,117 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Silownia
+build_property.RootNamespace = Silownia
+build_property.ProjectDir = /home/piotr/repos/ISI_Rok_2/Silownia/
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/piotr/repos/ISI_Rok_2/Silownia
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Karnet/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2FybmV0L0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Karnet/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2FybmV0L0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Karnet/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2FybmV0L0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Karnet/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2FybmV0L0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Karnet/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2FybmV0L0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Logowanie/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9nb3dhbmllL0xvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Logowanie/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9nb3dhbmllL0xvZ291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Logowanie/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9nb3dhbmllL1JlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Uzytkownik/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXp5dGtvd25pay9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Uzytkownik/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXp5dGtvd25pay9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Uzytkownik/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXp5dGtvd25pay9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Uzytkownik/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXp5dGtvd25pay9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Uzytkownik/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXp5dGtvd25pay9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Wejscie/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vqc2NpZS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Wejscie/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vqc2NpZS9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Wejscie/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vqc2NpZS9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Wejscie/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vqc2NpZS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Wejscie/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vqc2NpZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/repos/ISI_Rok_2/Silownia/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nt71wuxx63
