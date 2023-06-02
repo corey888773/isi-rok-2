@@ -27,6 +27,30 @@ namespace Silownia.Controllers
                         Problem("Entity set 'MvcUzytkownikContext.Karnet'  is null.");
         }
 
+        [HttpPost("Dodaj")]
+        public async Task<IActionResult> Dodaj(int idKarnetu)
+        {
+            var karnet = await _context.Karnet.FirstOrDefaultAsync(m => m.Id == idKarnetu);
+            var session = HttpContext.Session;
+            var userId = session.GetInt32("userId") ;
+
+            Console.WriteLine("userId: " + userId);
+            Console.WriteLine("karnet: " + karnet?.Nazwa ?? "zle karnet debilu");
+
+            var User = await _context.Uzytkownik.FirstOrDefaultAsync(m => m.Id == userId);
+
+            if (User == null)
+            {
+                return NotFound();
+            }
+
+            User.Karnet = karnet;
+            _context.Update(User);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Home"); // Redirect to the welcome page after successful login
+        }
+
         // GET: Karnet/Details/5
         public async Task<IActionResult> Details(int? id)
         {

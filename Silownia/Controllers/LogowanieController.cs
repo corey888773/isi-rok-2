@@ -64,7 +64,7 @@ public class LogowanieController : Controller
          // Successful login
 
         // Add user to session
-        HttpContext.Session.SetString("userId", user.Id.ToString());
+        HttpContext.Session.SetInt32("userId", user.Id);
         HttpContext.Session.SetString("isAdmin", user.CzyAdministrator.ToString());
 
         bool loggedIn = true;
@@ -147,7 +147,7 @@ public class LogowanieController : Controller
         var user = _context.Uzytkownik.FirstOrDefault(u => u.Email == email);
 
         // add user to session
-        HttpContext.Session.SetString("userId", user.Id.ToString());
+        HttpContext.Session.SetInt32("userId", user.Id);
         HttpContext.Session.SetString("isAdmin", user.CzyAdministrator.ToString());
 
 

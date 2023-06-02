@@ -56,12 +56,12 @@
             }
         }
         else{
-            var currentUser = Context.Session.GetString("userId");
+            var currentUserId = Context.Session.GetInt32("userId");
             @foreach (var item in Model)
             {
-                var isUserOwner = item.Uzytkownicy?.Any(u => u.Id == int.Parse(currentUser)) ?? false;
+                var isUserOwner = item.Uzytkownicy?.Any(u => u.Id == currentUserId);
 
-                if (isUserOwner)
+                if (isUserOwner ?? false)
                 {
                     <tr>
                         <td>
@@ -82,11 +82,11 @@
                     </tr>
                 }
             }
-            <form asp-action="ChooseKarnet" method="post">
-                <select name="karnetId">
+            <form asp-action="Dodaj" method="post">
+                <select name="idKarnetu">
                     @foreach (var item in Model)
                     {
-                        var isUserOwner = item.Uzytkownicy?.Any(u => u.Id == int.Parse(currentUser)) ?? false;
+                        var isUserOwner = item.Uzytkownicy?.Any(u => u.Id == currentUserId) ?? false;
 
                         if (!isUserOwner)
                         {

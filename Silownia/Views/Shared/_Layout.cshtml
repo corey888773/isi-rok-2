@@ -18,7 +18,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 @{
-                    bool loggedIn = Context.Session.GetString("userId") != null;
+                    bool loggedIn = Context.Session.GetInt32("userId") != null;
                     bool isAdmin = Convert.ToBoolean(Context.Session.GetString("isAdmin") ?? "false");
                 }
                 <li class="nav-item">
