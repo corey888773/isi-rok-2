@@ -2,13 +2,16 @@
 
 @{
     ViewData["Title"] = "Index";
+    bool isAdmin = Convert.ToBoolean(Context.Session.GetString("isAdmin") ?? "false");
 }
 
-<h1>Index</h1>
+<h1>Moje karnety</h1>
+@if(isAdmin){
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -28,26 +31,74 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nazwa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cena)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Opis)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CzasTrwaniaWMiesiacach)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @if(isAdmin){
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nazwa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cena)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Opis)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CzasTrwaniaWMiesiacach)
+                    </td>
+                    <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        
+                    </td>
+                </tr>
+            }
+        }
+        else{
+            var currentUser = Context.Session.GetString("userId");
+            @foreach (var item in Model)
+            {
+                var isUserOwner = item.Uzytkownicy?.Any(u => u.Id == int.Parse(currentUser)) ?? false;
+
+                if (isUserOwner)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nazwa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cena)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Opis)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CzasTrwaniaWMiesiacach)
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            }
+            <form asp-action="ChooseKarnet" method="post">
+                <select name="karnetId">
+                    @foreach (var item in Model)
+                    {
+                        var isUserOwner = item.Uzytkownicy?.Any(u => u.Id == int.Parse(currentUser)) ?? false;
+
+                        if (!isUserOwner)
+                        {
+                            <option value="@item.Id">@item.Nazwa</option>
+                        }
+                    }
+                </select>
+                <input type="submit" value="Choose" />
+            </form>
+        }
+
     </tbody>
 </table>
+
+    

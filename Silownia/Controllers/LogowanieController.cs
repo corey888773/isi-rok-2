@@ -67,6 +67,11 @@ public class LogowanieController : Controller
         HttpContext.Session.SetString("userId", user.Id.ToString());
         HttpContext.Session.SetString("isAdmin", user.CzyAdministrator.ToString());
 
+        bool loggedIn = true;
+        bool isAdmin = user.CzyAdministrator;
+        ViewBag.LoggedIn = loggedIn;
+        ViewBag.Admin = isAdmin;
+
         return RedirectToAction("Index", "Home"); // Redirect to the welcome page after successful login
         }
 
